@@ -21,6 +21,7 @@ set suspend     # allow nano be suspended
 ## ^-shft-del delete until word start
 ## ^-L   refresh
 ## ^-Q   quit
+## M-1   help (Ctrl-H failed on some terminal)
 ## M-/   comment/uncomment
 ## M-:   record macro
 ## M-;   play macro
@@ -46,6 +47,7 @@ bind ^X  cut    main
 bind ^V  paste  main
 bind ^D  zap    main  # might not be supported
 bind ^Q  exit   all
+bind M-1 help   all
 bind M-/ comment main
 
 bind M-C curpos	      main
