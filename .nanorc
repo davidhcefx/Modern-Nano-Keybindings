@@ -27,7 +27,7 @@ set suspend     # allow nano be suspended
 
 ## M-C   cursor position
 ## ^-W   search forward (= M-W + prompt)
-## ^-E   seach backward
+## ^-E   seach backward (= M-E + prompt)
 ## ^-up  goto previous block
 ## ^-dn  goto next block
 ## ^-G   head of file (vim-like)
