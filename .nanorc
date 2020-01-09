@@ -1,0 +1,60 @@
+# Syntax highlights (path might be different)
+include /usr/share/nano/*
+
+# Options
+set tabsize 4
+set linenumbers
+set numbercolor yellow,normal
+set morespace   # prevent adding a blank line under title
+set wordbounds  # treat punctuations as words
+set suspend     # allow nano be suspended
+
+
+#####  Modern Nano Keybindings  #####
+## M-U   undo
+## M-R   redo
+## ^-C   copy
+## ^-X   cut
+## ^-V   paste
+## ^-D   delete line
+## ^-del      delete until next word
+## ^-shft-del delete until word start
+## ^-L   refresh
+## ^-Q   quit
+## M-/   comment/uncomment
+## M-:   record macro
+## M-;   play macro
+
+## M-C   cursor position
+## ^-W   search forward (= M-W + prompt)
+## ^-E   seach backward
+## ^-up  goto previous block
+## ^-dn  goto next block
+## ^-G   head of file (vim-like)
+## M-G   end of file
+## M-up  screen up one line
+## M-dn  screen down one line
+## M-]   goto matching bracket
+
+unbind ^Y main  # remove unused bindings
+unbind ^A main
+unbind M-Q all
+
+bind M-R redo   main
+bind ^C	 copy   main
+bind ^X  cut    main
+bind ^V  paste  main
+bind ^D  zap    main  # might not be supported
+bind ^Q  exit   all
+bind M-/ comment main
+
+bind M-C curpos	      main
+bind ^E  wherewas     all
+bind M-E findprevious all
+bind M-0 home         main # vim-like support
+bind M-4 end          main
+bind ^B  pageup       all  # vim-like support
+bind ^F  pagedown     all
+bind ^G  firstline    all
+bind M-G lastline     all
+bind M-F constantshow main  # fix M-C been used
