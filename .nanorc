@@ -6,8 +6,8 @@ set tabsize 4
 set linenumbers
 set numbercolor yellow,normal
 set morespace   # prevent adding a blank line under title
-set wordbounds  # treat punctuations as words
 set suspend     # allow nano be suspended
+#set wordbounds  # treat punctuations as words
 
 
 #####  Modern Nano Keybindings  #####
@@ -30,8 +30,8 @@ set suspend     # allow nano be suspended
 ## ^-E   seach backward (= M-E + prompt)
 ## ^-up  goto previous block
 ## ^-dn  goto next block
-## ^-G   head of file (vim-like)
-## M-G   end of file
+## ^-G   head-of-file (vim-like)
+## M-G   end-of-file
 ## M-up  screen up one line
 ## M-dn  screen down one line
 ## M-]   goto matching bracket
