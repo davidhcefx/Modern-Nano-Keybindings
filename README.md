@@ -6,7 +6,7 @@
   - eg. `Ctrl+C` to copy, `Ctrl+Q` to quit, `Alt+/` to comment, etc.
 - Vim-like support.
   - eg. `Ctrl+F` for page-down, `Ctrl+G` to go to **head-of-file**, etc.
-- and at the same time preserve most of the default functionality.
+- and at the same time preserve most of the default functionalities.
 
 ## Install:
 
