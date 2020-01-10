@@ -7,6 +7,7 @@ set linenumbers
 set numbercolor yellow,normal
 set morespace   # prevent adding a blank line under title
 set suspend     # allow nano be suspended
+set smarthome   # home jumps to line start first
 #set wordbounds  # treat punctuations as words
 
 
