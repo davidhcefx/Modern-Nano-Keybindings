@@ -17,7 +17,7 @@ set smarthome   # home jumps to line start first
 ## ^-C   copy
 ## ^-X   cut
 ## ^-V   paste
-## ^-D   delete line
+## ^-K   delete line
 ## ^-del      delete until next word
 ## ^-shft-del delete until word start
 ## ^-L   refresh
@@ -46,7 +46,7 @@ bind M-R redo   main
 bind ^C	 copy   main
 bind ^X  cut    main
 bind ^V  paste  main
-bind ^D  zap    main  # might not be supported
+bind ^K  zap    main  # might not be supported
 bind ^Q  exit   all
 bind M-1 help   all
 bind M-/ comment main
