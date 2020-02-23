@@ -1,4 +1,4 @@
-# My-Modern-Nano-Keybindings
+# Modern-Nano-Keybindings
 
 ## Features:
 
