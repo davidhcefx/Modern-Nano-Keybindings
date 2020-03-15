@@ -18,8 +18,8 @@ set smarthome   # home jumps to line start first
 ## ^-X   cut
 ## ^-V   paste
 ## ^-K   delete line
-## ^-del      delete until next word
-## ^-shft-del delete until word start
+## ^-back   delete until word start  (see: https:/github.com/davidhcefx/nano-4.8 to enable this)
+## ^-del    delete until next word
 ## ^-L   refresh
 ## ^-Q   quit
 ## M-1   help (Ctrl-H failed on some terminal)
@@ -29,11 +29,11 @@ set smarthome   # home jumps to line start first
 
 ## M-C   cursor position
 ## ^-W   search forward (= M-W + prompt)
-## ^-E   seach backward (= M-E + prompt)
+## ^-E   seach backwards (= M-E + prompt)
 ## ^-up  goto previous block
 ## ^-dn  goto next block
-## ^-G   head-of-file (vim-like)
-## M-G   end-of-file
+## ^-G   head of file (vim-like)
+## M-G   end of file
 ## M-up  screen up one line
 ## M-dn  screen down one line
 ## M-]   goto matching bracket
@@ -42,22 +42,23 @@ unbind ^Y main  # remove unused bindings
 unbind ^A main
 unbind M-Q all
 
-bind M-R redo   main
-bind ^C	 copy   main
-bind ^X  cut    main
-bind ^V  paste  main
-bind ^K  zap    main  # might not be supported
-bind ^Q  exit   all
-bind M-1 help   all
-bind M-/ comment main
+bind M-R  redo   main
+bind ^C	  copy   main
+bind ^X   cut    main
+bind ^V   paste  main
+bind ^K   zap    main  # might not be supported
+#bind ^H   chopwordleft all  # see: https:/github.com/davidhcefx/nano-4.8
+bind ^Q   exit   all
+bind M-1  help   all
+bind M-/  comment main
 
-bind M-C curpos	      main
-bind ^E  wherewas     all
-bind M-E findprevious all
-bind M-0 home         main # vim-like support
-bind M-4 end          main
-bind ^B  pageup       all  # vim-like support
-bind ^F  pagedown     all
-bind ^G  firstline    all
-bind M-G lastline     all
-bind M-F constantshow main  # fix M-C been used
+bind M-C  curpos	      main
+bind ^E   wherewas     all
+bind M-E  findprevious all
+bind M-0  home         main # vim-like support
+bind M-4  end          main
+bind ^B   pageup       all  # vim-like support
+bind ^F   pagedown     all
+bind ^G   firstline    all
+bind M-G  lastline     all
+bind M-F  constantshow main  # fix M-C been used
