@@ -18,7 +18,7 @@ set smarthome   # home jumps to line start first
 ## ^-X   cut
 ## ^-V   paste
 ## ^-K   delete line
-## ^-back   delete until word start  (see: https:/github.com/davidhcefx/nano-4.8 to enable this)
+## ^-back   delete until word start
 ## ^-del    delete until next word
 ## ^-L   refresh
 ## ^-Q   quit
@@ -47,7 +47,7 @@ bind ^C	  copy   main
 bind ^X   cut    main
 bind ^V   paste  main
 bind ^K   zap    main  # might not be supported
-#bind ^H   chopwordleft all  # see: https:/github.com/davidhcefx/nano-4.8
+bind ^H   chopwordleft all
 bind ^Q   exit   all
 bind M-1  help   all
 bind M-/  comment main
