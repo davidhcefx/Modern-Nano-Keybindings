@@ -1,3 +1,4 @@
+# Version: nano 4.8
 # Syntax highlights (path might be different)
 include /usr/share/nano/*
 
@@ -22,7 +23,7 @@ set smarthome   # home jumps to line start first
 ## ^-del    delete until next word
 ## ^-L   refresh
 ## ^-Q   quit
-## M-1   help (Ctrl-H failed on some terminal)
+## F1    help
 ## M-/   comment/uncomment
 ## M-:   record macro
 ## M-;   play macro
@@ -46,10 +47,9 @@ bind M-R  redo   main
 bind ^C	  copy   main
 bind ^X   cut    main
 bind ^V   paste  main
-bind ^K   zap    main  # might not be supported
+bind ^K   zap    main
 bind ^H   chopwordleft all
 bind ^Q   exit   all
-bind M-1  help   all
 bind M-/  comment main
 
 bind M-C  curpos	      main
