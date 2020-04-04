@@ -22,9 +22,9 @@ set smarthome   # home jumps to line start first
 ## ^-back   delete until word start
 ## ^-del    delete until next word
 ## ^-L   refresh
-## ^-Q   quit
-## F1    help
+## ^-S   save file
 ## M-/   comment/uncomment
+## M-V   insert keystroke verbatim
 ## M-:   record macro
 ## M-;   play macro
 
@@ -33,6 +33,9 @@ set smarthome   # home jumps to line start first
 ## ^-E   seach backwards (= M-E + prompt)
 ## ^-up  goto previous block
 ## ^-dn  goto next block
+## M-(   goto block begin
+## M-)   goto block end
+## ^_    goto line/coloumn number
 ## ^-G   head of file (vim-like)
 ## M-G   end of file
 ## M-up  screen up one line
@@ -55,8 +58,6 @@ bind M-/  comment main
 bind M-C  curpos	      main
 bind ^E   wherewas     all
 bind M-E  findprevious all
-bind M-0  home         main # vim-like support
-bind M-4  end          main
 bind ^B   pageup       all  # vim-like support
 bind ^F   pagedown     all
 bind ^G   firstline    all
