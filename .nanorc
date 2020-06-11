@@ -1,13 +1,13 @@
-# Version: nano 4.8
+# Version: nano 4.9
 # Syntax highlights (path might be different)
-include /usr/share/nano/*
+include "/usr/share/nano/*"
 
 # Options
 set tabsize 4
 set tabstospaces
 set linenumbers
 set numbercolor yellow,normal
-set suspend	    # allow nano be suspended
+set suspendable # allow nano be suspended
 set smarthome   # home jumps to line start first
 set zap	        # delete selected text as a whole
 set afterends   # Ctrl+Right move to word ends instead of word starts
