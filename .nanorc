@@ -45,24 +45,24 @@ set wordchars "_"   # recognize _ as part of a word
 ## M-dn  screen down one line
 ## M-]   goto matching bracket
 
-unbind ^Y main  # remove unused bindings
-unbind ^A main
+unbind ^Y  main  # remove unused bindings
+unbind ^A  main
 unbind M-Q all
 
-bind M-R  redo   main
-bind ^C	  copy   main
-bind ^X   cut    main
-bind ^V   paste  main
-bind ^K   zap    main
-bind ^H   chopwordleft all
-bind ^Q   exit   all
-bind M-/  comment main
+bind M-R  redo			main
+bind ^C	  copy			main
+bind ^X   cut			main
+bind ^V   paste			main
+bind ^K   zap			main
+bind ^H   chopwordleft	all
+bind ^Q   exit			all
+bind M-/  comment		main
 
-bind M-C  curpos	      main
-bind ^E   wherewas     all
-bind M-E  findprevious all
-bind ^B   pageup       all  # vim-like support
-bind ^F   pagedown     all
-bind ^G   firstline    all
-bind M-G  lastline     all
-bind M-F  constantshow main  # fix M-C been used
+bind M-C  curpos		main
+bind ^E   wherewas		all
+bind M-E  findprevious	all
+bind ^B   pageup		all  # vim-like support
+bind ^F   pagedown		all
+bind ^G   firstline		all
+bind M-G  lastline		all
+bind M-F  constantshow	main  # fix M-C been used
