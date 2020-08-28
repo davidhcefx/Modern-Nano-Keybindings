@@ -5,6 +5,7 @@ include "/usr/share/nano/*"
 # Options
 set tabsize 4
 set tabstospaces
+set indicator   # side-bar for indicating cur position
 set linenumbers
 set numbercolor yellow,normal
 set suspendable # allow nano be suspended
