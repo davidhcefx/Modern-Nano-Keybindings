@@ -10,6 +10,6 @@
 
 ## Install:
 
-1. Make sure you are running the latest [Nano](https://www.nano-editor.org/) (>= 4.8).
+1. Make sure you are running the latest [Nano](https://www.nano-editor.org/) (>= 5.4).
 2. Put `.nanorc` under your home directory.
 3. The path to your **Syntax Highlight files** might be different. Change [this line](https://github.com/davidhcefx/My-Modern-Nano-Keybindings/blob/master/.nanorc#L2) if necessary.
