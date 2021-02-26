@@ -3,7 +3,7 @@
 ## Features:
 
 - Common mainstream keybindings.
-  - eg. `Ctrl+C` to copy, `Ctrl+Q` to quit, `Ctrl+Back` to delete until previous word, etc.
+  - eg. `Ctrl+C` to copy, `Ctrl+V` to paste, `Ctrl+Q` to quit, etc.
 - Vim-like support.
   - eg. `Ctrl+F` for page-down, `Ctrl+G` to go to *head-of-file*, etc.
 - and at the same time preserve most of the default functionalities.
