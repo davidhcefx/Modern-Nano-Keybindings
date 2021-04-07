@@ -9,6 +9,7 @@ set tabstospaces
 set indicator   # side-bar for indicating cur position
 set linenumbers
 set numbercolor yellow,normal
+set mouse
 set suspendable # allow nano be suspended
 set smarthome   # home jumps to line start first
 set zap	        # delete selected text as a whole
@@ -24,8 +25,8 @@ set wordchars "_"   # recognize _ as part of a word
 ## ^-X   cut
 ## ^-V   paste
 ## ^-K   delete line
-## ^-back   delete until word start
-## ^-del    delete until next word
+## ^-bsp delete until word start (or M-bsp)
+## ^-del delete until next word
 ## ^-L   refresh
 ## ^-S   save file
 ## M-/   comment/uncomment
