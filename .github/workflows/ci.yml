@@ -12,11 +12,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Fetch code
+        uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
       - name: Build Nano $version
-        run: ls -la
+        run: |
+          git clone --depth 1 --branch $(git describe --tags) git://git.savannah.gnu.org/nano.git
+          apt install autoconf automake autopoint gcc gettext git groff make pkg-config texinfo libncurses5-dev
+          cd nano && ./autogen.sh && ./configure
+          make -j
+          src/nano --version
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
