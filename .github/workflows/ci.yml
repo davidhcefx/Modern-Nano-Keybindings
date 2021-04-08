@@ -1,30 +1,35 @@
 name: CI
-
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  workflow_dispatch:
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Build Nano $version
+      - name: Fetch nano $REF_VERSION
         run: |
-          git clone --depth 1 --branch $(git describe --tags) git://git.savannah.gnu.org/nano.git
-          apt install autoconf automake autopoint gcc gettext git groff make pkg-config texinfo libncurses5-dev
-          cd nano && ./autogen.sh && ./configure
-          make -j
-          src/nano --version
+          git fetch --tags
+          REF_VERSION=$(git tag --list | tail -n 1)
+          echo "REF_VERSION: $REF_VERSION"
+          git clone --depth 1 --branch $REF_VERSION git://git.savannah.gnu.org/nano.git
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Setup and configure nano
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          cd nano
+          sudo apt-get install -y autoconf automake autopoint gcc gettext git groff make pkg-config texinfo libncurses5-dev
+          ./autogen.sh
+          ./configure --prefix=/usr
+          cd -
+
+      - name: Build nano
+        run: |
+          cd nano
+          make -j && sudo make install
+          cd -
+          nano/src/nano --version
+
+      - name: Test syntax highlighting
+        run: |
+          TERM=xterm timeout 1s nano/src/nano --rcfile .nanorc >/dev/null 2>error.txt || true
+          cat error.txt | grep -v "Received SIGHUP or SIGTERM" && false
