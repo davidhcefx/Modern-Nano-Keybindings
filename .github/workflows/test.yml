@@ -1,4 +1,4 @@
-name: CI
+name: test
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
@@ -32,4 +32,5 @@ jobs:
       - name: Test syntax highlighting
         run: |
           TERM=xterm timeout 1s nano/src/nano --rcfile .nanorc >/dev/null 2>error.txt || true
-          cat error.txt | grep -v "Received SIGHUP or SIGTERM" && false
+          cat error.txt | grep -v -e "Received SIGHUP or SIGTERM" -e "Too many errors from stdin" && false
+          echo "All seems good!"
