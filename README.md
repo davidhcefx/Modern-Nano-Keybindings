@@ -29,16 +29,16 @@ include "/usr/share/nano/extra/*.nanorc"
 # Options
 set tabsize 4
 set tabstospaces
-set indicator   # side-bar for indicating cur position
 set linenumbers
 set numbercolor yellow,normal
+set indicator   # side-bar for indicating cur position
 set mouse       # enable mouse support
 set suspendable # allow nano be suspended
 set smarthome   # `Home` jumps to line start first
 set zap         # delete selected text as a whole
 set afterends   # `Ctrl+Right` move to word ends instead of word starts
 set wordchars "_"   # recognize '_' as part of a word
-#set rawsequences    # get keystroke without asking ncurses
+set historylog      # remember search history
 
 
 #####  Modern Nano Keybindings  #####
@@ -96,8 +96,8 @@ bind ^B   pageup        all  # vim-like support
 bind ^F   pagedown      all
 bind ^G   firstline     all
 bind M-G  lastline      all
-bind M-F  constantshow  main  # fix M-C been used
-bind ^I   insert        all   # fix ^R been
+bind M-1  help          all  # fix ^G been used
+bind Sh-M-C  constantshow  main  # fix M-C been used
 ```
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.  
