@@ -6,13 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: '100'
 
-      - name: Fetch nano $REF_VERSION
+      - name: Fetch nano $GIT_TAG
         run: |
-          git fetch --tags
-          REF_VERSION=$(git tag --list | tail -n 1)
-          echo "REF_VERSION: $REF_VERSION"
-          git clone --depth 1 --branch $REF_VERSION git://git.savannah.gnu.org/nano.git
+          GIT_TAG=$(git describe --tags)
+          echo "GIT_TAG: $GIT_TAG"
+          git clone --depth 1 --branch $GIT_TAG git://git.savannah.gnu.org/nano.git
 
       - name: Setup and configure nano
         run: |
