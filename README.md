@@ -16,12 +16,12 @@
 
 ## Install
 
-1. Make sure you are running the [latest nano](https://www.nano-editor.org/) (>= 5.4).
+1. This rcfile is for nano version 2.9. For latest version, see [master branch].
     - Take a look at [releases](https://github.com/davidhcefx/Modern-Nano-Keybindings/releases) if you are using a legacy version.
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
-# Version: nano 5.4
+# Version: nano 2.9
 # Syntax highlights (path might be different)
 include "/usr/share/nano/*.nanorc"
 include "/usr/share/nano/extra/*.nanorc"
@@ -30,15 +30,15 @@ include "/usr/share/nano/extra/*.nanorc"
 set tabsize 4
 set tabstospaces
 set linenumbers
-set numbercolor yellow,normal
-set indicator   # side-bar for indicating cur position
+set numbercolor yellow
 set mouse       # enable mouse support
-set suspendable # allow nano be suspended
+set suspend     # allow nano be suspended
 set smarthome   # `Home` jumps to line start first
-set zap         # delete selected text as a whole
-set afterends   # `Ctrl+Right` move to word ends instead of word starts
 set wordchars "_"   # recognize '_' as part of a word
 set historylog      # remember search history
+# 2.9 additional
+set smooth
+set morespace
 
 
 #####  Modern Nano Keybindings  #####
@@ -49,7 +49,7 @@ set historylog      # remember search history
 ## ^-V   paste
 ## ^-K   delete line
 ## ^-bsp delete until word start (or M-bsp)
-## ^-del delete until next word
+## M-d   delete until next word
 ## ^-L   refresh and center cursor
 ## ^-S   save file
 ## M-/   comment/uncomment
@@ -68,23 +68,20 @@ set historylog      # remember search history
 ## ^_    goto line/coloumn number
 ## ^-G   head of file (vim-like)
 ## M-G   end of file
-## M-up  screen up one line
-## M-dn  screen down one line
+## M--   screen up one line
+## M-+   screen down one line
 ## M-]   goto matching bracket
-## M-ins   insert anchor
-## M-pgup  goto previous anchor
-## ^-T   terminal (eg. |xxd)
 
 unbind ^Y  main  # remove unused bindings
 unbind ^A  main
 unbind M-Q all
 
 bind M-R  redo          main
-bind ^C   copy          main
+bind ^C   copytext      main
 bind ^X   cut           main
-bind ^V   paste         main
-bind ^K   zap           main
-bind ^H   chopwordleft  all
+bind ^V   uncut         main
+bind ^H   cutwordleft   all
+bind M-d  cutwordright  all
 bind ^Q   exit          all
 bind M-/  comment       main
 
@@ -97,7 +94,15 @@ bind ^F   pagedown      all
 bind ^G   firstline     all
 bind M-G  lastline      all
 bind M-1  help          all  # fix ^G been used
-bind Sh-M-C  constantshow  main  # fix M-C been used
+bind F3   constupdate   main  # fix M-C been used
+# 2.9 additional
+bind F12  speller       main
+bind M-B  linter        main
+bind ^W   whereis       main
+bind M-W  findnext      main
+bind M-D  wordcount     main
+bind M-S  softwrap      main
+bind M-O tabstospaces   main
 ```
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.  
