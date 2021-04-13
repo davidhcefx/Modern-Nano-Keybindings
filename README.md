@@ -12,7 +12,7 @@
 ## Install
 
 1. Make sure you are running the [latest nano](https://www.nano-editor.org/) (>= 5.4).
-2. Copy the following contents into `~/.nanorc`.
+2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
 # Version: nano 5.4
@@ -26,12 +26,12 @@ set tabstospaces
 set indicator   # side-bar for indicating cur position
 set linenumbers
 set numbercolor yellow,normal
-set mouse
+set mouse       # enable mouse support
 set suspendable # allow nano be suspended
-set smarthome   # home jumps to line start first
+set smarthome   # `Home` jumps to line start first
 set zap         # delete selected text as a whole
-set afterends   # Ctrl+Right move to word ends instead of word starts
-set wordchars "_"   # recognize _ as part of a word
+set afterends   # `Ctrl+Right` move to word ends instead of word starts
+set wordchars "_"   # recognize '_' as part of a word
 #set rawsequences    # get keystroke without asking ncurses
 
 
