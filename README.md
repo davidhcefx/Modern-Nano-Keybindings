@@ -4,14 +4,20 @@
 ## Features
 
 - Common _mainstream_ keybindings.
-    - eg. `Ctrl+C` to copy, `Ctrl+V` to paste, `Ctrl+Q` to quit, etc.
+    + `Ctrl+C`: copy
+    + `Ctrl+Z`: suspend
+    + `Ctrl+Q`: quit
 - Vim-like support.
-    - eg. `Ctrl+F` for page-down, `Ctrl+G` to go to *head-of-file*, etc.
-- and at the same time preserve _all_ default functionalities!
+    + `Ctrl+F`: page-down
+    + `Ctrl+G`: head-of-file
+    + `Alt+G`: end-of-file
+- and at the same time preserve ***all*** functionalities!
+    + (many rcfiles override keys and don't assign new ones for them)
 
 ## Install
 
 1. Make sure you are running the [latest nano](https://www.nano-editor.org/) (>= 5.4).
+    - Take a look at [releases](https://github.com/davidhcefx/Modern-Nano-Keybindings/releases) if you are using a legacy version.
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
@@ -44,7 +50,7 @@ set wordchars "_"   # recognize '_' as part of a word
 ## ^-K   delete line
 ## ^-bsp delete until word start (or M-bsp)
 ## ^-del delete until next word
-## ^-L   refresh
+## ^-L   refresh and center cursor
 ## ^-S   save file
 ## M-/   comment/uncomment
 ## M-V   insert keystroke verbatim
@@ -54,6 +60,7 @@ set wordchars "_"   # recognize '_' as part of a word
 ## M-C   cursor position
 ## ^-W   search forward (= M-W + prompt)
 ## ^-E   seach backwards (= M-E + prompt)
+## ^-R   replace
 ## ^-up  goto previous block
 ## ^-dn  goto next block
 ## M-(   goto block begin
@@ -84,11 +91,13 @@ bind M-/  comment       main
 bind M-C  curpos        main
 bind ^E   wherewas      all
 bind M-E  findprevious  all
+bind ^R   replace       all
 bind ^B   pageup        all  # vim-like support
 bind ^F   pagedown      all
 bind ^G   firstline     all
 bind M-G  lastline      all
 bind M-F  constantshow  main  # fix M-C been used
+bind ^I   insert        all   # fix ^R been
 ```
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.  
