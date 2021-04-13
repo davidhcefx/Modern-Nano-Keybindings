@@ -29,8 +29,9 @@ jobs:
           cd -
           nano/src/nano --version
 
-      - name: Test syntax highlighting
+      - name: Test nanorc
         run: |
+          cat README.md | sed -n '0,/```/d;p' | sed '/```/Q' > .nanorc
           TERM=xterm timeout 1s nano/src/nano --rcfile .nanorc >/dev/null 2>error.txt || true
           cat error.txt | grep -v -e "Received SIGHUP or SIGTERM" -e "Too many errors from stdin" && false
           echo "All seems good!"

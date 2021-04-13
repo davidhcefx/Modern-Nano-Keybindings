@@ -93,3 +93,7 @@ bind M-F  constantshow  main  # fix M-C been used
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.  
 > - For more colorful syntax highlightings, see: [scopatz/nanorc](https://github.com/scopatz/nanorc).
+
+## Screenshot
+
+![screenshot](screenshot.png)
