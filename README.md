@@ -55,6 +55,7 @@ set morespace
 ## M-V   insert keystroke verbatim
 ## M-:   record macro
 ## M-;   play macro
+## ^-Space  autocomplete word
 
 ## M-C   cursor position
 ## ^-W   search forward (= M-W + prompt)
@@ -83,6 +84,7 @@ bind ^H   cutwordleft   all
 bind M-d  cutwordright  all
 bind ^Q   exit          all
 bind M-/  comment       main
+bind ^Space complete    main
 
 bind M-C  curpos        main
 bind ^E   wherewas      all
