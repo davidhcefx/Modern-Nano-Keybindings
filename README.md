@@ -1,5 +1,5 @@
 # Modern Nano Keybindings
-[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=v2.9.3)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
+[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=v2.9)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
 
 ## Features
 
