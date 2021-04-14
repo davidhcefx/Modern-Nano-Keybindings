@@ -11,7 +11,12 @@ jobs:
 
       - name: Fetch nano $GIT_TAG
         run: |
-          GIT_TAG=$(git describe --tags)
+          git branch --list
+          git log -n 10
+          git fetch --tags
+          git log -n 10
+          git describe --tags
+          GIT_TAG=$(git describe --tags --abbrev=0)
           echo "GIT_TAG: $GIT_TAG"
           git clone --depth 1 --branch $GIT_TAG git://git.savannah.gnu.org/nano.git
 
