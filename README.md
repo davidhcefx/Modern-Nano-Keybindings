@@ -1,4 +1,4 @@
-# Modern Nano Keybindings
+# Modern Nano Keybindings (v2.9)
 [![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=v2.9)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
 
 ## Features
@@ -16,8 +16,7 @@
 
 ## Install
 
-1. This rcfile is for nano version 2.9. For latest version, see [master branch].
-    - Take a look at [releases](https://github.com/davidhcefx/Modern-Nano-Keybindings/releases) if you are using a legacy version.
+1. **This rcfile is for nano v2.9. For latest version, please see [master branch](https://github.com/davidhcefx/Modern-Nano-Keybindings).**
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
@@ -107,7 +106,3 @@ bind M-O tabstospaces   main
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.  
 > - For more colorful syntax highlightings, see: [scopatz/nanorc](https://github.com/scopatz/nanorc).
-
-## Screenshot
-
-![screenshot](screenshot.png)
