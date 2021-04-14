@@ -1,5 +1,5 @@
 # Modern Nano Keybindings
-[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
+[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
 
 ## Features
 
@@ -17,7 +17,7 @@
 ## Install
 
 1. Make sure you are running the [latest nano](https://www.nano-editor.org/) (>= 5.4).
-    - Take a look at [releases](https://github.com/davidhcefx/Modern-Nano-Keybindings/releases) if you are using a legacy version.
+    - If you are using a legacy version, take a look at other [branches](https://github.com/davidhcefx/Modern-Nano-Keybindings/branches) or [tags](https://github.com/davidhcefx/Modern-Nano-Keybindings/tags).
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
