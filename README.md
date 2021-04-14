@@ -107,4 +107,4 @@ bind Sh-M-C  constantshow  main  # fix M-C been used
 
 ## Screenshot
 
-![screenshot](screenshot.png)
+<img src="screenshot.png" alt="screenshot" width="83%">
