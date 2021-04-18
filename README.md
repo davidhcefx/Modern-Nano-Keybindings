@@ -89,7 +89,7 @@ bind ^Space complete    main
 bind M-C  curpos        main
 bind ^E   wherewas      all
 bind M-E  findprevious  all
-bind ^R   replace       all
+bind ^R   replace       main
 bind ^B   pageup        all  # vim-like support
 bind ^F   pagedown      all
 bind ^G   firstline     all
