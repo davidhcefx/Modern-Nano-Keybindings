@@ -20,10 +20,9 @@
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
-# Version: nano 2.9
+# Version: nano 2.9.3
 # Syntax highlights (path might be different)
 include "/usr/share/nano/*.nanorc"
-include "/usr/share/nano/extra/*.nanorc"
 
 # Options
 set tabsize 4
@@ -81,7 +80,7 @@ bind ^C   copytext      main
 bind ^X   cut           main
 bind ^V   uncut         main
 bind ^H   cutwordleft   all
-bind M-d  cutwordright  all
+bind ^D  cutwordright  all
 bind ^Q   exit          all
 bind M-/  comment       main
 bind ^Space complete    main
