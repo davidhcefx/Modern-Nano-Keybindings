@@ -1,5 +1,6 @@
-# Modern Nano Keybindings
-[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
+# Modern Nano Keybindings (v4.8)
+
+[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=v4.8)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
 
 ## Features
 
@@ -16,8 +17,7 @@
 
 ## Install
 
-1. Make sure you are running the [latest nano](https://www.nano-editor.org/) (>= 5.4).
-    - If you are using a legacy version, take a look at other [branches](https://github.com/davidhcefx/Modern-Nano-Keybindings/branches) or [tags](https://github.com/davidhcefx/Modern-Nano-Keybindings/tags).
+1. **This rcfile is for nano v4.8. For latest version, please see [master branch](https://github.com/davidhcefx/Modern-Nano-Keybindings).**
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
@@ -97,7 +97,7 @@ bind M-1  help          all  # fix ^G been used
 bind Sh-M-C  constantshow  main  # fix M-C been used
 ```
 
-> - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.  
+> - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.
 > - For more colorful syntax highlightings, see: [scopatz/nanorc](https://github.com/scopatz/nanorc).
 
 ## Screenshot
