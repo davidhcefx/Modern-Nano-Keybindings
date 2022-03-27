@@ -21,19 +21,17 @@
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
-# Version: nano 5.4
+# Version: nano 4.8
 # Syntax highlights (path might be different)
 include "/usr/share/nano/*.nanorc"
-include "/usr/share/nano/extra/*.nanorc"
 
 # Options
 set tabsize 4
 set tabstospaces
 set linenumbers
 set numbercolor yellow,normal
-set indicator   # side-bar for indicating cur position
 set mouse       # enable mouse support
-set suspendable # allow nano be suspended
+set suspend     # allow nano be suspended
 set smarthome   # `Home` jumps to line start first
 set zap         # delete selected text as a whole
 set afterends   # `Ctrl+Right` move to word ends instead of word starts
@@ -72,9 +70,6 @@ set historylog      # remember search history
 ## M-up  screen up one line
 ## M-dn  screen down one line
 ## M-]   goto matching bracket
-## M-ins   insert anchor
-## M-pgup  goto previous anchor
-## ^-T   terminal (eg. |xxd)
 
 unbind ^Y  main  # remove unused bindings
 unbind ^A  main
