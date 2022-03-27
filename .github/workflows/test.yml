@@ -9,7 +9,7 @@ jobs:
         with:
           fetch-depth: '100'
 
-      - name: Fetch nano $GIT_TAG
+      - name: Fetch nano version $GIT_TAG
         run: |
           git fetch --tags
           GIT_TAG=$(git describe --tags --abbrev=0)
@@ -24,16 +24,17 @@ jobs:
           ./configure --prefix=/usr
           cd -
 
-      - name: Build nano
+      - name: Build and install nano
         run: |
           cd nano
-          make -j && sudo make install
+          make -j
+          sudo make install
           cd -
-          nano/src/nano --version
+          nano --version
 
-      - name: Test nanorc
+      - name: Test rcfile
         run: |
-          cat README.md | sed -n '0,/```/d;p' | sed '/```/Q' > .nanorc
-          TERM=xterm timeout 1s nano/src/nano --rcfile .nanorc >/dev/null 2>error.txt || true
-          cat error.txt | grep -v -e "Received SIGHUP or SIGTERM" -e "Too many errors from stdin" && false
+          sed -n '0,/```/d;p' README.md | sed '/```/Q' > .nanorc
+          TERM=xterm timeout 1s nano --rcfile .nanorc >/dev/null 2>error.txt || true
+          grep -v -e "Received SIGHUP or SIGTERM" -e "Too many errors from stdin" error.txt && false
           echo "All seems good!"
