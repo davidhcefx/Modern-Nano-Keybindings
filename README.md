@@ -39,6 +39,7 @@ set zap         # delete selected text as a whole
 set afterends   # `Ctrl+Right` move to word ends instead of word starts
 set wordchars "_"   # recognize '_' as part of a word
 set historylog      # remember search history
+set multibuffer     # read files into multibuffer instead of insert
 
 
 #####  Modern Nano Keybindings  #####
@@ -108,4 +109,4 @@ bind Sh-M-C  constantshow  main  # fix M-C been used
 
 ## Screenshot
 
-<img src="screenshot.png" alt="screenshot" width="83%">
+<img src="screenshot_in_tango.png" alt="screenshot" width="83%">
