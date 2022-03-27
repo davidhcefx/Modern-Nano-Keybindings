@@ -1,5 +1,6 @@
-# Modern Nano Keybindings
-[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
+# Modern Nano Keybindings (v5.6.1)
+
+[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=v5.6.1)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
 
 ## Features
 
@@ -16,12 +17,11 @@
 
 ## Install
 
-1. Make sure you are running the [latest nano](https://www.nano-editor.org/) (>= 5.4).
-    - If you are using a legacy version, take a look at other [branches](https://github.com/davidhcefx/Modern-Nano-Keybindings/branches) or [tags](https://github.com/davidhcefx/Modern-Nano-Keybindings/tags).
+1. **This rcfile is for nano v5.6.1. For latest version, please see [master branch](https://github.com/davidhcefx/Modern-Nano-Keybindings).**
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
-# Version: nano 5.4
+# Version: nano 5.6.1
 # Syntax highlights (path might be different)
 include "/usr/share/nano/*.nanorc"
 include "/usr/share/nano/extra/*.nanorc"
@@ -33,7 +33,6 @@ set linenumbers
 set numbercolor yellow,normal
 set indicator   # side-bar for indicating cur position
 set mouse       # enable mouse support
-set suspendable # allow nano be suspended
 set smarthome   # `Home` jumps to line start first
 set zap         # delete selected text as a whole
 set afterends   # `Ctrl+Right` move to word ends instead of word starts
@@ -87,6 +86,7 @@ bind ^V   paste         main
 bind ^K   zap           main
 bind ^H   chopwordleft  all
 bind ^Q   exit          all
+bind ^Z   suspend       main
 bind M-/  comment       main
 bind ^Space complete    main
 
@@ -102,7 +102,7 @@ bind M-1  help          all  # fix ^G been used
 bind Sh-M-C  constantshow  main  # fix M-C been used
 ```
 
-> - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.  
+> - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.
 > - For more colorful syntax highlightings, see: [scopatz/nanorc](https://github.com/scopatz/nanorc).
 
 ## Screenshot
