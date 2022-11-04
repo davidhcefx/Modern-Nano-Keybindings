@@ -81,7 +81,7 @@ bind ^C   copytext      main
 bind ^X   cut           main
 bind ^V   uncut         main
 bind ^H   cutwordleft   all
-bind ^D  cutwordright  all
+bind ^D   cutwordright  all
 bind ^Q   exit          all
 bind M-/  comment       main
 bind ^Space complete    main
@@ -99,11 +99,11 @@ bind F3   constupdate   main  # fix M-C been used
 # 2.9 additional
 bind F12  speller       main
 bind M-B  linter        main
-bind ^W   whereis       main
-bind M-W  findnext      main
+bind ^W   whereis       all
+bind M-W  findnext      all
 bind M-D  wordcount     main
 bind M-S  softwrap      main
-bind M-O tabstospaces   main
+bind M-O  tabstospaces  main
 ```
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.
