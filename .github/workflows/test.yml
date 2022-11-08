@@ -12,9 +12,10 @@ jobs:
       - name: Fetch nano $VERSION
         run: |
           VERSION=$(git branch --show-current)
-          if [[ $VERSION == 'main' ]]; then
+          if [[ "$VERSION" != v* ]]; then
+              # either triggered by tag or on main branch
               git fetch --tags
-              VERSION=$(git describe --tags --abbrev=0)
+              VERSION=$(git describe --tags --abbrev=0 | sed 's/-r.*$//')
           fi
           echo "VERSION: $VERSION"
           git clone --depth 1 --branch $VERSION git://git.savannah.gnu.org/nano.git
