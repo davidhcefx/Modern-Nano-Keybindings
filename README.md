@@ -32,13 +32,14 @@ set tabstospaces
 set linenumbers
 set numbercolor yellow,normal
 set indicator   # side-bar for indicating cur position
-set mouse       # enable mouse support
 set smarthome   # `Home` jumps to line start first
-set zap         # delete selected text as a whole
 set afterends   # `Ctrl+Right` move to word ends instead of word starts
 set wordchars "_"   # recognize '_' as part of a word
+set zap             # delete selected text as a whole
 set historylog      # remember search history
 set multibuffer     # read files into multibuffer instead of insert
+set mouse       # enable mouse support
+#set locking     # vim-like file locks
 
 
 #####  Modern Nano Keybindings  #####
@@ -74,11 +75,7 @@ set multibuffer     # read files into multibuffer instead of insert
 ## M-]   goto matching bracket
 ## M-ins   insert anchor
 ## M-pgup  goto previous anchor
-## ^-T   terminal (eg. |xxd)
-
-unbind ^Y  main  # remove unused bindings
-unbind ^A  main
-unbind M-Q all
+## ^-T     terminal (eg. |xxd)
 
 bind M-R  redo          main
 bind ^C   copy          main
@@ -99,8 +96,16 @@ bind ^B   pageup        all  # vim-like support
 bind ^F   pagedown      all
 bind ^G   firstline     all
 bind M-G  lastline      all
-bind M-1  help          all  # fix ^G been used
-bind Sh-M-C  constantshow  main  # fix M-C been used
+#bind M-F  nextword      all  # to bind to `M-left` on macOS
+#bind M-B  prevword      all
+#bind M-2  anchor        main  # to use anchors on macOS
+#bind F2   nextanchor    main
+#bind F3   prevanchor    main
+
+bind M-1    help        all    # fix ^G been used
+bind Sh-M-C constantshow main  # fix M-C, M-F and M-b been used
+bind Sh-M-F formatter   main
+bind Sh-M-B linter      main
 ```
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.
