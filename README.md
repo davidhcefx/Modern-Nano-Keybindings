@@ -89,7 +89,7 @@ bind ^Z   suspend       main
 bind M-/  comment       main
 bind ^Space complete    main
 
-bind M-C  curpos        main
+bind M-C  location      main
 bind ^E   wherewas      all
 bind M-E  findprevious  all
 bind ^R   replace       main
