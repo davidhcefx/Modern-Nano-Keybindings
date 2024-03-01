@@ -92,7 +92,7 @@ bind ^B   pageup        all  # vim-like support
 bind ^F   pagedown      all
 bind ^G   firstline     all
 bind M-G  lastline      all
-#bind M-F  nextword      all  # to bind to `M-left` on macOS
+#bind M-F  nextword      all  # M-left on iTerm natural editing
 #bind M-B  prevword      all
 
 bind M-1    help        all    # fix ^G been used
