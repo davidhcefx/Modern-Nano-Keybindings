@@ -1,6 +1,6 @@
-# Modern Nano Keybindings
+# Modern Nano Keybindings (v6.2)
 
-[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
+[![test](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml/badge.svg?branch=v6.2)](https://github.com/davidhcefx/Modern-Nano-Keybindings/actions/workflows/test.yml)
 
 ## Features
 
@@ -17,8 +17,7 @@
 
 ## Install
 
-1. Make sure you are running the [latest nano](https://www.nano-editor.org/).
-    - If you are using a legacy version, please take a look at [other branches](https://github.com/davidhcefx/Modern-Nano-Keybindings/branches)!
+1. **This rcfile is for nano v6.2. For latest version, please see [master branch](https://github.com/davidhcefx/Modern-Nano-Keybindings).**
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
