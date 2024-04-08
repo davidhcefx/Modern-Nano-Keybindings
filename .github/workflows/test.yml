@@ -38,7 +38,7 @@ jobs:
 
       - name: Test rcfile
         run: |
-          sed -n '0,/```/d;p' README.md | sed '/```/Q' > .nanorc
+          sed '1,/```/d' README.md | sed -n '/```/q;p' > .nanorc
           TERM=xterm timeout 1s nano --rcfile .nanorc >/dev/null 2>error.txt || true
           grep -v -e "Received SIGHUP or SIGTERM" -e "Too many errors from stdin" error.txt && false
           echo "All seems good!"
