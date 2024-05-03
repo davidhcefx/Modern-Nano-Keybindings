@@ -22,7 +22,8 @@
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
-# Version: nano 6.2
+# Modern Nano Keybindings
+# For: nano 7.2
 # Syntax highlights (path might be different)
 include "/usr/share/nano/*.nanorc"
 include "/usr/share/nano/extra/*.nanorc"
@@ -32,60 +33,63 @@ set tabsize 4
 set tabstospaces
 set linenumbers
 set numbercolor yellow,normal
-set indicator   # side-bar for indicating cur position
-set smarthome   # `Home` jumps to line start first
-set afterends   # `Ctrl+Right` move to word ends instead of word starts
+set scrollercolor grey,normal
+set indicator       # side bar for indicating cur position
+set smarthome       # `Home` jumps to line start first
+set afterends       # `Ctrl+Right` move to word ends instead of word starts
 set wordchars "_"   # recognize '_' as part of a word
 set zap             # delete selected text as a whole
+set atblanks        # soft wrap at blank chars
 set historylog      # remember search history
 set multibuffer     # read files into multibuffer instead of insert
-set mouse       # enable mouse support
-#set locking     # vim-like file locks
+set mouse           # enable mouse support
+#set locking         # vim-like file locks
+#set nohelp          # disable help when you are familiar enough
 
 
-#####  Modern Nano Keybindings  #####
+#####  Keybindings Cheatsheet  #####
+## ^-Q   quit
 ## M-U   undo
 ## M-R   redo
 ## ^-C   copy
-## ^-X   cut
 ## ^-V   paste
+## ^-X   cut
 ## ^-K   delete line
-## ^-bsp delete until word start (or M-bsp)
-## ^-del delete until next word
-## ^-L   refresh and center cursor
+## ^-Bsp delete until word start (or M-Bsp)
+## ^-Del delete until next word
 ## ^-S   save file
 ## M-/   comment/uncomment
-## M-V   insert keystroke verbatim
 ## M-:   record macro
 ## M-;   play macro
-## ^-Space  autocomplete word
+## ^-Space autocomplete word
+## ^-T     terminal (eg. "|xxd")
 
-## M-C   cursor position
-## ^-W   search forward (= M-W + prompt)
-## ^-E   seach backwards (= M-E + prompt)
+## M-C   show cursor position
+## ^-L   refresh and center at cursor
+## ^-W   search forwards (= M-W with prompt)
+## ^-E   search backwards (= M-E with prompt)
 ## ^-R   replace
-## ^-up  goto previous block
-## ^-dn  goto next block
-## M-(   goto block begin
-## M-)   goto block end
-## ^_    goto line/coloumn number
-## ^-G   head of file (vim-like)
-## M-G   end of file
-## M-up  screen up one line
-## M-dn  screen down one line
+## ^_    goto line number
+## ^-Up  goto previous block
+## ^-Dwn goto next block
 ## M-]   goto matching bracket
-## M-ins   insert anchor
-## M-pgup  goto previous anchor
-## ^-T     terminal (eg. |xxd)
+## ^-G   goto head of file (vim-like)
+## M-G   goto end of file
+## M-Up  scroll screen up
+## M-Dwn scroll screen down
+## M-Left  switch to previous file
+## M-Rght  switch to next file
+## M-Ins   insert anchor
+## M-PgDwn goto next anchor
 
-bind M-R  redo          main
-bind ^C   copy          main
-bind ^X   cut           main
-bind ^V   paste         main
-bind ^K   zap           main
-bind ^H   chopwordleft  all
 bind ^Q   exit          all
 bind ^Z   suspend       main
+bind M-R  redo          main
+bind ^C   copy          main
+bind ^V   paste         main
+bind ^X   cut           main
+bind ^K   zap           main
+bind ^H   chopwordleft  all
 bind M-/  comment       main
 bind ^Space complete    main
 
@@ -93,24 +97,29 @@ bind M-C  location      main
 bind ^E   wherewas      all
 bind M-E  findprevious  all
 bind ^R   replace       main
-bind ^B   pageup        all  # vim-like support
-bind ^F   pagedown      all
+bind ^_   gotoline      main
 bind ^G   firstline     all
 bind M-G  lastline      all
-#bind M-F  nextword      all  # M-left on iTerm natural editing
+bind ^B   pageup        all  # vim-like support
+bind ^F   pagedown      all  # vim-like support
+
+## for macOS
+#bind M-F  nextword      all  # is M-left on iTerm natural editing
 #bind M-B  prevword      all
-#bind M-2  anchor        main  # to use anchors on macOS
+#bind M-2  anchor        main # M-Ins keystroke is hard to produce
 #bind F2   nextanchor    main
 #bind F3   prevanchor    main
 
-bind M-1    help        all    # fix ^G been used
-bind Sh-M-C constantshow main  # fix M-C, M-F and M-b been used
-bind Sh-M-F formatter   main
-bind Sh-M-B linter      main
+bind M-1    help         all   # fix ^G been used
+bind Sh-M-C constantshow main  # fix M-C been used
+bind Sh-M-F formatter    main  # fix M-F and M-B might be used
+bind Sh-M-B linter       main
+#unbind ^J               main  # for those who rarely use justify
+#unbind M-J              main  # for those who rarely use justify
 ```
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.
-> - For more colorful syntax highlightings, see: [scopatz/nanorc](https://github.com/scopatz/nanorc) :-)
+> - For more colorful syntax highlightings, see: [galenguyer/nano-syntax-highlighting](https://github.com/galenguyer/nano-syntax-highlighting) :-)
 
 ## Screenshot
 
