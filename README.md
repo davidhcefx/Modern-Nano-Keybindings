@@ -18,7 +18,7 @@
 ## Install
 
 1. Make sure you are running the [latest nano](https://www.nano-editor.org/).
-    - If you are using a legacy version, please take a look at [other branches](https://github.com/davidhcefx/Modern-Nano-Keybindings/branches)!
+    - If you are using a legacy version, please take a look at the [other branches](https://github.com/davidhcefx/Modern-Nano-Keybindings/branches/all)!
 2. Copy the following contents into `~/.nanorc`:
 
 ```nanorc
