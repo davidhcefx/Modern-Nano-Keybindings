@@ -40,6 +40,7 @@ set wordchars "_"   # recognize '_' as part of a word
 set zap             # delete selected text as a whole
 set atblanks        # soft wrap at blank chars
 set historylog      # remember search history
+set nonewlines      # newline at end of file
 set multibuffer     # read files into multibuffer instead of insert
 set mouse           # enable mouse support
 #set locking         # vim-like file locks
