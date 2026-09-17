@@ -106,7 +106,7 @@ bind ^F   pagedown      all  # vim-like support
 
 ## for macOS
 #bind M-F  nextword      all  # will be M-right if enabled iTerm natural editing
-#bind M-B  prevword      all. # will be M-left if enabled iTerm natural editing
+#bind M-B  prevword      all  # will be M-left if enabled iTerm natural editing
 #bind M-2  anchor        main # because M-Ins is hard to emit
 #bind F2   nextanchor    main
 #bind F3   prevanchor    main
