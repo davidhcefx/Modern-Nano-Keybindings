@@ -48,7 +48,7 @@ set mouse           # enable mouse support
 
 
 #####  Keybindings Cheatsheet  #####
-## ^-Q   quit
+## ^-Q   quit (^=ctrl, M=alt)
 ## M-U   undo
 ## M-R   redo
 ## ^-C   copy
@@ -117,6 +117,8 @@ bind Sh-M-B linter       main
 #unbind ^J               main  # for those who rarely use justify
 #unbind M-J              main  # for those who rarely use justify
 ```
+
+3. For macOS users using the default terminal, please enable [use option as meta key](https://support.apple.com/en-us/guide/terminal/trmlkbrd/mac). For iTerm2 users, please configure [option to send escape codes](https://iterm2.com/faq.html).
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.
 > - For more colorful syntax highlightings, see: [galenguyer/nano-syntax-highlighting](https://github.com/galenguyer/nano-syntax-highlighting) :-)
