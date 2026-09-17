@@ -41,7 +41,7 @@ set morespace
 
 
 #####  Modern Nano Keybindings  #####
-## M-U   undo
+## M-U   undo (^=ctrl, M=alt)
 ## M-R   redo
 ## ^-C   copy
 ## ^-X   cut
@@ -105,6 +105,8 @@ bind M-D  wordcount     main
 bind M-S  softwrap      main
 bind M-O  tabstospaces  main
 ```
+
+3. For macOS users using the default terminal, please enable [use option as meta key](https://support.apple.com/en-us/guide/terminal/trmlkbrd/mac). For iTerm2 users, please configure [option to send escape codes](https://iterm2.com/faq.html).
 
 > - If the path to **syntax highlighting files** are different on your system, please modify those `includes` around `line 3`.
 > - For more colorful syntax highlightings, see: [scopatz/nanorc](https://github.com/scopatz/nanorc).
