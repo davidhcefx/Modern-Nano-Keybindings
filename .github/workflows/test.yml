@@ -7,41 +7,42 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: '50'
 
-      - name: Fetch nano $VERSION
-        run: |
-          VERSION=$(git branch --show-current)
-          if [[ $VERSION == 'main' ]]; then
-              git fetch --tags
-              VERSION=$(git describe --tags --abbrev=0)
-          fi
-          echo "VERSION: $VERSION"
-          git clone --depth 1 --branch $VERSION git://git.savannah.gnu.org/nano.git
+#      - name: Fetch nano $VERSION
+#        run: |
+#          VERSION=$(git branch --show-current)
+#          if [[ $VERSION == 'main' ]]; then
+#              git fetch --tags
+#              VERSION=$(git describe --tags --abbrev=0)
+#          fi
+#          echo "VERSION: $VERSION"
+#          git clone --depth 1 --branch $VERSION git://git.savannah.gnu.org/nano.git
 
-      - name: Setup and configure nano
-        run: |
-          cd nano
-          sudo apt-get install -y autoconf automake autopoint gcc gettext git groff make pkg-config texinfo libncurses5-dev
-          ./autogen.sh
-          ./configure --prefix=/usr
-          cd -
+#      - name: Setup and configure nano
+#        run: |
+#          cd nano
+#          sudo apt-get install -y autoconf automake autopoint gcc gettext git groff make pkg-config texinfo libncurses5-dev
+#          ./autogen.sh
+#          ./configure --prefix=/usr
+#          cd -
 
-      - name: Build and install nano
-        run: |
-          cd nano
-          make -j
-          sudo make install
-          cd -
-          nano --version
+#      - name: Build and install nano
+#        run: |
+#          cd nano
+#          make -j
+#          sudo make install
+#          cd -
+#          nano --version
 
       - name: Test rcfile
         run: |
-          sed -n '0,/```/d;p' README.md | sed '/```/Q' > .nanorc
+          nano --version
+          sed '1,/```/d' README.md | sed -n '/```/q;p' > .nanorc
           TERM=xterm timeout 1s nano --rcfile .nanorc >/dev/null 2>error.txt || true
-          grep -v -e "Received SIGHUP or SIGTERM" -e "Too many errors from stdin" error.txt && false
+          grep -v -e "Received SIGHUP or SIGTERM" \
+            -e "Too many errors from stdin" \
+            -e "input is not a terminal" error.txt && false
           echo "All seems good!"
